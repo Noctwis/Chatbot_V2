@@ -3,5 +3,4 @@ pyyaml
 langchain-ollama
 sentence-transformers
 faiss-cpu
-
-ollama pull mistral:7b-instruct
+mistralai
