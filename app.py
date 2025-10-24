@@ -60,6 +60,8 @@ for message in st.session_state.messages:
 # user input
 if prompt := st.chat_input("Pose ta question ici..."):
     st.session_state.messages.append({"role": "user", "content": prompt})
+    with st.chat_message("user"):
+        st.write(prompt)
 
     with st.chat_message("assistant"):
         with st.spinner("Analyse en cours..."):
@@ -68,6 +70,6 @@ if prompt := st.chat_input("Pose ta question ici..."):
                 agent_info = agent_map.get(agent_name)
                 response = bot_core.identify_use_case(prompt, agent_info)
             except Exception as e:
-               response = "Je ne suis pas certain de pouvoir répondre à cette question pour le moment."
+                response = "Je ne suis pas certain de pouvoir répondre à cette question pour le moment."
             st.write(response)
             st.session_state.messages.append({"role": "assistant", "content": response})
