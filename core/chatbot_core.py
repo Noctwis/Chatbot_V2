@@ -1,11 +1,17 @@
 from langchain_ollama import OllamaLLM
+from huggingface_hub import login
+
+
 from utils.markdown_loader import load_agent_md
 import os
 from mcp.dispatcher import invoke_mcp
 
+
+login("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")
 class ChatbotCore:
-    def __init__(self, model_name='mistral:7b-instruct'):
-        self.llm = OllamaLLM(model=model_name)
+    def __init__(self, model_name='mistralai/Mistral-7B-Instruct-v0.3'):
+        #self.llm = OllamaLLM(model=model_name)
+        self.llm = model_name
 
     def identify_use_case(self, user_input, agent_info):
         if not agent_info:
