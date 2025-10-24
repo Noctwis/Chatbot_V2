@@ -7,7 +7,7 @@ import os
 from mcp.dispatcher import invoke_mcp
 
 
-login("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")
+login("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")
 class ChatbotCore:
     def __init__(self, model_name='mistralai/Mistral-7B-Instruct-v0.3'):
         #self.llm = OllamaLLM(model=model_name)
